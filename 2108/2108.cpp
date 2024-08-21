@@ -3,14 +3,14 @@ using namespace std;
 class Pryamo{
 private:
 	int x;
+	bool Tf;
 	int y;
 	void Proverka() {
-		bool Tf;
 		if (x > 0 && y > 0) {
-			bool Tf = false;
+			Tf = false;
 		}
 		else {
-			bool Tf = true;
+			Tf = true;
 		}
 	}
 public:
@@ -28,15 +28,23 @@ public:
 	}
 	int Perimetr() {
 		Proverka();
-		int summa;
-		summa = x + y + x + y;
-		return summa;
+		if (Tf == false) {
+			int summa;
+			summa = x + y + x + y;
+			return summa;
+		}
+		else {
+		
+		}
 	}
 	int Plochad() {
 		Proverka();
-		int summa;
-		summa = x * y;
-		return summa;
+		if (Tf == false) {
+			int summa;
+			summa = x * y;
+			return summa;
+		}
+		
 	}
 	void PlochadVivod() {
 		cout << "Plochad: " << Plochad();
@@ -47,5 +55,11 @@ public:
 };
 int main()
 {
-   
+	Pryamo kvad1;
+	kvad1.SetY(2);
+	kvad1.SetX(-2);
+	kvad1.Perimetr();
+	kvad1.Plochad();
+	kvad1.PlochadVivod();
+	kvad1.PerimetrVivod();
 }
